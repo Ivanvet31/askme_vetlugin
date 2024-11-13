@@ -35,7 +35,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/mnt/media/projects/askme_vetlugin/askme_vetlugin"
+VIRTUAL_ENV="/mnt/media/projects/_askme_vetlugin/askme_vetlugin"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

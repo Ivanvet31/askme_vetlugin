@@ -1,4 +1,4 @@
-#!/mnt/media/projects/askme_vetlugin/askme_vetlugin/bin/python
+#!/mnt/media/projects/_askme_vetlugin/askme_vetlugin/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
