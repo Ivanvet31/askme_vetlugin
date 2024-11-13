@@ -1,0 +1,55 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Settings</title>
+{% endblock %}
+
+{% block content_name %}
+    <h1>Settings: Aboba</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="col-9 d-flex justify-content-center mt-4 mb-4">
+        <div class="card shadow-sm" style="width: 40rem;">
+            <div class="card-body">
+                <form action="#" method="POST" class="d-flex flex-column gap-2">
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="login-label">Login</span>
+                        <input type="text" class="form-control" placeholder="dr_pepper" aria-label="Login" aria-describedby="login-label">
+                    </div>
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="email-label">Email</span>
+                        <input type="email" class="form-control" placeholder="dr.pepper@mail.ru" aria-label="Email" aria-describedby="email-label">
+                    </div>
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="nickname-label">Nickname</span>
+                        <input type="text" class="form-control" placeholder="Dr.Pepper" aria-label="Nickname" aria-describedby="nickname-label">
+                    </div>
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="avatar-label">Upload Avatar</span>
+                        <div class="input-group mt-2 w-75">
+                            <!-- File path -->
+                            <input type="text" class="form-control bg-white" placeholder="Choose file..." readonly id="file-path">
+
+                            <!-- Browse button -->
+                            <label class="input-group-text btn btn-outline-secondary" for="file-upload">Browse</label>
+                            <input type="file" class="d-none" id="file-upload" onchange="displayFilePath()">
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-success" type="submit">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<script>
+    function displayFilePath() {
+        const fileInput = document.getElementById("file-upload");
+        const filePath = document.getElementById("file-path");
+        filePath.value = fileInput.value.replace("C:\\fakepath\\", "");
+    }
+</script>

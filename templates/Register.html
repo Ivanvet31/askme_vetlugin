@@ -1,0 +1,63 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Registration</title>
+{% endblock %}
+
+{% block content_name %}
+    <h1>Registration</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="col-9 d-flex justify-content-center mt-4 mb-4">
+        <div class="card shadow-sm" style="width: 40rem;">
+            <div class="card-body">
+                <form action="#" method="POST" class="d-flex flex-column gap-2">
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="login-label">Username</span>
+                        <input type="text" class="form-control" placeholder="Your username" aria-label="Username" aria-describedby="login-label">
+                    </div>
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="email-label">Email</span>
+                        <input type="email" class="form-control" placeholder="Your email" aria-label="Email" aria-describedby="email-label">
+                    </div>
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="nickname-label">Nickname</span>
+                        <input type="text" class="form-control" placeholder="Your nickname" aria-label="Nickname" aria-describedby="nickname-label">
+                    </div>
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="password-label">Password</span>
+                        <input type="password" class="form-control" placeholder="Your password" aria-label="Password" aria-describedby="password-label">
+                    </div>
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="confirm-password-label">Repeat Password</span>
+                        <input type="password" class="form-control" placeholder="Repeat your password" aria-label="Confirm Password" aria-describedby="confirm-password-label">
+                    </div>
+                    <div class="input-group flex-nowrap flex-grow-1">
+                        <span class="input-group-text bg-light d-flex align-items-start" id="avatar-label">Upload Avatar</span>
+                        <div class="input-group mt-2 w-75">
+                            <!-- File path -->
+                            <input type="text" class="form-control bg-white" placeholder="Choose file..." readonly id="file-path">
+
+                            <!-- Browse button -->
+                            <label class="input-group-text btn btn-outline-secondary" for="file-upload">Browse</label>
+                            <input type="file" class="d-none" id="file-upload" onchange="displayFilePath()">
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-success" type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<script>
+    function displayFilePath() {
+        const fileInput = document.getElementById("file-upload");
+        const filePath = document.getElementById("file-path");
+        filePath.value = fileInput.value.replace("C:\\fakepath\\", "");
+    }
+</script>
